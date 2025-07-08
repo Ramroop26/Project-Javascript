@@ -1,99 +1,101 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
+ * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-body {
-  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/036/627/335/small/ai-generated-vibrant-gradient-smoke-on-transparent-background-png.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: linear-gradient(#c91ca6, #9a74eb, #ACB6E5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(270deg,
+        #ff0000, #ff9900, #ffff00,
+        #33cc33, #3399ff, #9900cc,
+        #ff3399, #ff0000);
+      background-size: 1600% 1600%;
+      animation: rainbowBG 30s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-form {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 50px 30px;
-  width: 100%;
-  max-width: 360px;
-  min-height: 360px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
+    @keyframes rainbowBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-.form-header h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: #2f3542;
-}
-h1{
-    text-align: center;
-    margin-bottom: 20px;
-  
-  
-}
+    .login-box {
+      width: 350px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease-out;
+    }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px 14px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  background: #f9f9f9;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-input:focus {
-  border-color: #3498db;
-  background-color: #ffffff;
-  outline: none;
-  box-shadow: 0 0 3px rgba(52, 152, 219, 0.2);
-}
+    .login-box h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
 
-input[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  background: linear-gradient(#c91ca6, #db34bf, #b929b9);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
 
-input[type="submit"]:hover {
-  background: linear-gradient(#34db63, #2bb929, #1cc958);
-}
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #888;
+    }
 
-p {
-  color: red;
-  font-size: 12px;
-  margin: -6px 0 8px;
-  font-style: italic;
-}
+    .input-group input {
+      width: 100%;
+      padding: 12px 12px 12px 40px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
 
-/* Responsive Tweaks */
-@media (max-width: 480px) {
-  form {
-    padding: 20px 18px;
-    max-width: 320px;
-  }
+    .input-group input:focus {
+      border-color: #764ba2;
+      outline: none;
+    }
 
-  .form-header h2 {
-    font-size: 20px;
-  }
-}
+    .error {
+      color: red;
+      font-size: 13px;
+      margin: 5px 2px 0;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #764ba2;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background: #5a3390;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 400px) {
+      .login-box {
+        width: 90%;
+        padding: 30px 20px;
+      }
+    }

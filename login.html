@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colorful Animated Login | Railway Booking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div align="center">
-        <h1>Login Page</h1>
-        <form name="My form">
-            <p id="erremail"></p>
-         Email:<input type="email" name="email" id="email" placeholder="Enter Your Email"><br><br>
-        
-        <p id="errpass"></p>
-       Password:<input type="password" name="password" id="pass" placeholder="Enter Your Password"><br><br>
-        <input type="submit" value="Login" onclick="return val()" >
-    </div>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form onsubmit="return val()">
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email">
+        <div id="erremail" class="error"></div>
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="pass" placeholder="Password">
+        <div id="errpass" class="error"></div>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
     </form>
-    <script src="login.js"></script>
+  </div>
+
+  <script src="login.js"></script>
 </body>
 </html>

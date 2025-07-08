@@ -19,6 +19,8 @@
         <a href="schedule.html">Train Schedule</a>
         <a href="pnr.html">PNR Status</a>
         <a href="contact.html">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
+
     </nav>
   </header>
 
@@ -54,6 +56,13 @@
       result.innerHTML = `<span style="color:red">❌ PNR not found or still under waiting list.</span>`;
     }
   }
+
+   function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
+    }
 </script>
 
 </body>

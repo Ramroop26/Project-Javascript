@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="signup.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup | Railway Booking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    
-    <form action="" align="center"onsubmit="return valid()">
-         <div class="form-header">
+
+  <form class="signup-box" onsubmit="return valid()">
     <h2>Signup Form</h2>
-  </div>
-    <p id="errname"></p>
-    Name:<input type="text" name="" id="name" placeholder="Enter Your Name" required><br><br>
-    <p id="errnum"></p>
-    Number:<input type="text" name="" id="num" placeholder="Enter Your Number" required><br><br>
-    <p id="erremail"></p>
-    Email:<input type="text" name="" id="email" placeholder="Enter Your Email" required><br><br>
-    <p id="errpass"></p>
-     Password:<input type="text" name="" id="pass" placeholder="Enter Your Password" required><br><br>
-    <p id="errcpass"></p>
-    ConfirmPassword:<input type="text" name="" id="cpass" placeholder="Enter Your ConfirmPassword" required><br>
-    <input type="submit" value="Signup" >
 
+    <div class="input-group">
+      <input type="text" id="name" placeholder="Enter Your Name" />
+      <div id="errname" class="error"></div>
+    </div>
 
-    </form>
-    
+    <div class="input-group">
+      <input type="text" id="num" placeholder="Enter Your Number" />
+      <div id="errnum" class="error"></div>
+    </div>
 
-    <script src="signup.js"></script>
+    <div class="input-group">
+      <input type="text" id="email" placeholder="Enter Your Email" />
+      <div id="erremail" class="error"></div>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="pass" placeholder="Enter Your Password" />
+      <div id="errpass" class="error"></div>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="cpass" placeholder="Confirm Your Password" />
+      <div id="errcpass" class="error"></div>
+    </div>
+
+    <button type="submit" class="signup-btn">Signup</button>
+  </form>
+
+  <script src="signup.js"></script>
 </body>
 </html>

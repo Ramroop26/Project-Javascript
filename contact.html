@@ -19,6 +19,8 @@
         <a href="schedule.html">Train Schedule</a>
         <a href="pnr.html">PNR Status</a>
         <a href="contact.html">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
+
     </nav>
   </header>
 
@@ -46,6 +48,13 @@
 
       // Simulated success message (no backend)
       result.innerHTML = `✅ Thank you, ${name}! Your message has been sent.`;
+    }
+
+     function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
     }
   </script>
 </body>

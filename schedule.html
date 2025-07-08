@@ -57,6 +57,8 @@
            <a href="schedule.html">Train Schedule</a>
           <a href="pnr.html">PNR Status</a>
          <a href="contact.html">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
+
       
     </nav>
   </header>
@@ -106,5 +108,14 @@
       </tbody>
     </table>
   </div>
+
+  <script>
+     function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>

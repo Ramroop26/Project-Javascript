@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book Ticket</title>
   <link rel="stylesheet" href="style.css"/>
-  
 </head>
 <body>
 
@@ -20,11 +19,13 @@
         <a href="schedule.html">Train Schedule</a>
         <a href="pnr.html">PNR Status</a>
         <a href="contact.html">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
     </nav>
   </header>
 
   <div class="booking-container">
-    <h2>Book Your Train Ticket</h2>
+    <h2>Welcome, <span id="username">User</span></h2>
+    <h3>Book Your Train Ticket</h3>
     <form onsubmit="generatePNR(event)">
       <input type="text" id="name" placeholder="Your Name" required />
       <input type="text" id="from" placeholder="From Station" required />
@@ -43,45 +44,60 @@
   </div>
 
   <script>
-  function generatePNR(event) {
-    event.preventDefault();
+    // Check login
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      alert("Please login first!");
+      location.href = "login.html";
+    }
 
-    const name = document.getElementById("name").value;
-    const from = document.getElementById("from").value;
-    const to = document.getElementById("to").value;
-    const date = document.getElementById("date").value;
-    const travelClass = document.getElementById("class").value;
+    // Show username if available
+    const username = localStorage.getItem("username");
+    if (username) {
+      document.getElementById("username").innerText = username;
+      document.getElementById("name").value = username; // Autofill user's name
+    }
 
-    const pnr = Math.floor(1000000000 + Math.random() * 9000000000); // 10-digit PNR
+    function generatePNR(event) {
+      event.preventDefault();
 
-    const ticket = {
-      pnr,
-      name,
-      from,
-      to,
-      date,
-      travelClass,
-      status: "Confirmed"
-    };
+      const name = document.getElementById("name").value;
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const date = document.getElementById("date").value;
+      const travelClass = document.getElementById("class").value;
 
-    // Save to localStorage
-    localStorage.setItem(`pnr_${pnr}`, JSON.stringify(ticket));
+      const pnr = Math.floor(1000000000 + Math.random() * 9000000000); // 10-digit PNR
 
-    document.getElementById("pnrOutput").innerHTML = `
-      ✅ Ticket Booked Successfully!<br />
-      <strong>PNR:</strong> ${pnr}<br/>
-      <strong>Name:</strong> ${name}<br/>
-      <strong>From:</strong> ${from} → <strong>To:</strong> ${to}<br/>
-      <strong>Date:</strong> ${date} | <strong>Class:</strong> ${travelClass}
-    `;
-  }
+      const ticket = {
+        pnr,
+        name,
+        from,
+        to,
+        date,
+        travelClass,
+        status: "Confirmed"
+      };
 
-  if(localStorage.getItem("isLoggedIn") !=="true"){
-    alert("Please Login First!")
-  location.href="login.html"
-  return false;
-  }
-</script>
+      // Save ticket
+      localStorage.setItem(`pnr_${pnr}`, JSON.stringify(ticket));
+
+      // Show output
+      document.getElementById("pnrOutput").innerHTML = `
+        ✅ <strong>Ticket Booked Successfully!</strong><br />
+        <strong>PNR:</strong> ${pnr}<br/>
+        <strong>Name:</strong> ${name}<br/>
+        <strong>From:</strong> ${from} → <strong>To:</strong> ${to}<br/>
+        <strong>Date:</strong> ${date} | <strong>Class:</strong> ${travelClass}
+      `;
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
+    }
+  </script>
 
 </body>
 </html>
