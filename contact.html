@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+         <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" alt="Railway Logo">
+      <h1>Railway Booking</h1>
+    </div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="book.html">Book Ticket</a>
+        <a href="schedule.html">Train Schedule</a>
+        <a href="pnr.html">PNR Status</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitContact(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="text" id="subject" placeholder="Subject" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="success-message" id="contactResult"></div>
+  </div>
+
+  <script>
+    function submitContact(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const result = document.getElementById("contactResult");
+
+      // Simulated success message (no backend)
+      result.innerHTML = `✅ Thank you, ${name}! Your message has been sent.`;
+    }
+  </script>
+</body>
+</html>

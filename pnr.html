@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNR Status</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <header>
+    <div class="logo">
+           <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" alt="Railway Logo">
+      <h1>Railway Booking</h1>
+    </div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="book.html">Book Ticket</a>
+        <a href="schedule.html">Train Schedule</a>
+        <a href="pnr.html">PNR Status</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="pnr-container">
+    <h2>Check PNR Status</h2>
+    <form onsubmit="checkPNR(event)">
+      <input type="text" id="pnr" placeholder="Enter your 10-digit PNR number" required />
+      <button type="submit">Check Status</button>
+    </form>
+    <div class="status-result" id="result"></div>
+  </div>
+
+  <script>
+  function checkPNR(e) {
+    e.preventDefault();
+    const pnr = document.getElementById("pnr").value.trim();
+    const result = document.getElementById("result");
+
+    const ticketData = localStorage.getItem(`pnr_${pnr}`);
+
+    if (ticketData) {
+      const ticket = JSON.parse(ticketData);
+      result.innerHTML = `
+        ✅ <strong>PNR Successful</strong><br/><br/>
+        <strong>PNR:</strong> ${ticket.pnr}<br/>
+        <strong>Name:</strong> ${ticket.name}<br/>
+        <strong>From:</strong> ${ticket.from} → <strong>To:</strong> ${ticket.to}<br/>
+        <strong>Date:</strong> ${ticket.date}<br/>
+        <strong>Class:</strong> ${ticket.travelClass}<br/>
+        <strong>Status:</strong> ${ticket.status}
+      `;
+    } else {
+      result.innerHTML = `<span style="color:red">❌ PNR not found or still under waiting list.</span>`;
+    }
+  }
+</script>
+
+</body>
+</html>

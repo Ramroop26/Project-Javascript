@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Train Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .schedule-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .schedule-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2e3b4e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2e3b4e;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" alt="Railway Logo">
+      <h1>Railway Booking</h1>
+    </div>
+    <nav>
+      
+               <a href="home.html">Home</a>
+        <a href="book.html">Book Ticket</a>
+           <a href="schedule.html">Train Schedule</a>
+          <a href="pnr.html">PNR Status</a>
+         <a href="contact.html">Contact</a>
+      
+    </nav>
+  </header>
+
+  <div class="schedule-container">
+    <h2>Train Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Train No.</th>
+          <th>Name</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12301</td>
+          <td>Rajdhani Express</td>
+          <td>New Delhi</td>
+          <td>Mumbai</td>
+          <td>16:30</td>
+          <td>08:15</td>
+          <td>Mon, Wed, Fri</td>
+        </tr>
+        <tr>
+          <td>12951</td>
+          <td>Shatabdi Express</td>
+          <td>Mumbai</td>
+          <td>Ahmedabad</td>
+          <td>06:10</td>
+          <td>12:45</td>
+          <td>All Days</td>
+        </tr>
+        <tr>
+          <td>22691</td>
+          <td>YPR-Hazrat Nizamuddin</td>
+          <td>Bangalore</td>
+          <td>Delhi</td>
+          <td>08:20</td>
+          <td>13:30</td>
+          <td>Tue, Sat</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

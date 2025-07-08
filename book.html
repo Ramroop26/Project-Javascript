@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Ticket</title>
+  <link rel="stylesheet" href="style.css"/>
+  
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" alt="Railway Logo">
+      <h1>Railway Booking</h1>
+    </div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="book.html">Book Ticket</a>
+        <a href="schedule.html">Train Schedule</a>
+        <a href="pnr.html">PNR Status</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="booking-container">
+    <h2>Book Your Train Ticket</h2>
+    <form onsubmit="generatePNR(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="from" placeholder="From Station" required />
+      <input type="text" id="to" placeholder="To Station" required />
+      <input type="date" id="date" required />
+      <select id="class" required>
+        <option value="">Select Class</option>
+        <option value="Sleeper">Sleeper</option>
+        <option value="3AC">3AC</option>
+        <option value="2AC">2AC</option>
+        <option value="1AC">1AC</option>
+      </select>
+      <button type="submit">Book Ticket</button>
+    </form>
+    <div class="pnr-result" id="pnrOutput"></div>
+  </div>
+
+  <script>
+  function generatePNR(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const date = document.getElementById("date").value;
+    const travelClass = document.getElementById("class").value;
+
+    const pnr = Math.floor(1000000000 + Math.random() * 9000000000); // 10-digit PNR
+
+    const ticket = {
+      pnr,
+      name,
+      from,
+      to,
+      date,
+      travelClass,
+      status: "Confirmed"
+    };
+
+    // Save to localStorage
+    localStorage.setItem(`pnr_${pnr}`, JSON.stringify(ticket));
+
+    document.getElementById("pnrOutput").innerHTML = `
+      ✅ Ticket Booked Successfully!<br />
+      <strong>PNR:</strong> ${pnr}<br/>
+      <strong>Name:</strong> ${name}<br/>
+      <strong>From:</strong> ${from} → <strong>To:</strong> ${to}<br/>
+      <strong>Date:</strong> ${date} | <strong>Class:</strong> ${travelClass}
+    `;
+  }
+
+  if(localStorage.getItem("isLoggedIn") !=="true"){
+    alert("Please Login First!")
+  location.href="login.html"
+  return false;
+  }
+</script>
+
+</body>
+</html>

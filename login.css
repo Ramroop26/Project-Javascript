@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/036/627/335/small/ai-generated-vibrant-gradient-smoke-on-transparent-background-png.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(#c91ca6, #9a74eb, #ACB6E5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 50px 30px;
+  width: 100%;
+  max-width: 360px;
+  min-height: 360px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.form-header h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #2f3542;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+  
+  
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  background: #f9f9f9;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #3498db;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: linear-gradient(#c91ca6, #db34bf, #b929b9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(#34db63, #2bb929, #1cc958);
+}
+
+p {
+  color: red;
+  font-size: 12px;
+  margin: -6px 0 8px;
+  font-style: italic;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  form {
+    padding: 20px 18px;
+    max-width: 320px;
+  }
+
+  .form-header h2 {
+    font-size: 20px;
+  }
+}
