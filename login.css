@@ -7,10 +7,10 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: linear-gradient(270deg,
+      /* background: linear-gradient(270deg,
         #ff0000, #ff9900, #ffff00,
         #33cc33, #3399ff, #9900cc,
-        #ff3399, #ff0000);
+        #ff3399, #ff0000); */
       background-size: 1600% 1600%;
       animation: rainbowBG 30s ease infinite;
       display: flex;
@@ -31,16 +31,17 @@
       border-radius: 15px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       animation: fadeInUp 1s ease-out;
+     
     }
 
-    @keyframes fadeInUp {
+    /* @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
-    }
+    } */
 
     .login-box h2 {
       text-align: center;
-      color: #333;
+      color: white;
       margin-bottom: 30px;
     }
 

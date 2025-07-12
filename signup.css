@@ -12,7 +12,7 @@
         #33cc33, #3399ff, #9900cc,
         #ff3399, #ff0000);
       background-size: 1600% 1600%;
-      animation: rainbowBG 30s ease infinite;
+      animation: rainbowBG 10s ease infinite;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -41,7 +41,7 @@
     .signup-box h2 {
       text-align: center;
       margin-bottom: 25px;
-      color: #333;
+      color: white;
     }
 
     .input-group {

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Colorful Animated Login | Railway Booking</title>
+  <title>Login | Railway Booking</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="login.css">
 </head>
-<body>
+<body id="net">
 
-  <div class="login-box">
+  <div class="login-box" id="hero">
     <h2>Login</h2>
     <form onsubmit="return val()">
       <div class="input-group">
@@ -25,8 +25,18 @@
       </div>
 
       <button type="submit" class="login-btn">Login</button>
+
+       <p style="text-align: center; margin-top: 15px; color:rgb(170, 236, 15);">
+      Don't have an account?
+      <a href="signup.html" class="signup-link" style="color: white;">Signup</a>
     </form>
+  
+  
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.halo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+<script src="vanta.js"></script>
 
   <script src="login.js"></script>
 </body>

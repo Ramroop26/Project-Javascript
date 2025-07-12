@@ -370,3 +370,54 @@ nav ul li a:hover {
   width: 60px;
   margin-bottom: 15px;
 }
+
+.services {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.services h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.services .service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.services .card {
+  background: #0078d7;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.services .card:hover {
+  background: #005bb5;
+}
+.highlight-section {
+  background: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.highlight-section h3 {
+  color: #0078d7;
+}
+.highlight-section a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #005bb5;
+  text-decoration: underline;
+}
+
+
+
+
